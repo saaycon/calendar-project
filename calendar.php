@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? '') === 'edit'
     $course = trim($_POST["course_name"] ?? '');
     $instructor = trim($_POST['instructor_name'] ?? '');
     $start = $_POST['start_date'] ?? '';
-    $end = $_POST['end_date'] ??;
+    $end = $_POST['end_date'] ?? null;
 
     if ($id && $course && $instructor && $start && $end) {
         $stmt = $conn ->prepare(
@@ -104,9 +104,9 @@ if($result && $result ->num_rows > 0) {
             $eventsFromDB[] = [
                 'id' =>$row["id"],
                 "title" => "{$row['course_name']} - {$row['instructor_name']}",
-                "date" => $start=>format('Y-m-d'),
+                "date" => $start->format('Y-m-d'),
                 "start" => $row["start_date"],
-                "end" = $row['end_date']
+                "end" => $row['end_date']
 
             ];
 
