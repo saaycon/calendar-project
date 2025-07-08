@@ -1,22 +1,21 @@
-:root{
+:root {
     --primary: #3B82F6;
     --primary-light: #DBEAFE;
-    --primary-dark: #1e3a8a;
-    --background: #f9fafb;
+    --primary-dark: #1E3A8A;
+    --background: #F9FaFB;
     --success: #d1fae5;
     --success-text: #065f46;
     --error: #fee2e2;
-    --error-text: #b91c1c;
+    --erro-text: #b91c1c;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-
+body {
     font-family: "Inter", sans-serif;
     background-color: var(--background);
     color: #333;
@@ -30,10 +29,9 @@ header {
     text-align: center;
 }
 
-/* Clock*/
+/* Clock */
 
 .clock-container {
-
     background-color: var(--primary-light);
     color: var(--primary-dark);
     font-size: 2rem;
@@ -43,60 +41,51 @@ header {
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     border-bottom: 2px solid var(--primary);
-
-
 }
 
 @media (max-width: 768px) {
-
     .clock-container {
         font-size: 1.4rem;
         padding: 0.75rem;
     }
 }
 
-/* Calendar container */
+/* Calenar Contantion */
 
-.calendar{
-
+.calendar {
     max-width: 1000px;
     margin: 2rem auto;
     background-color: white;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
 }
 
-
-.nav-btn-container{
-
+.nav-btn-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.nav-btn{
-
+.nav-btn {
     font-size: 1.5rem;
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--primary-dark);
+    color: var(--primary-dark)
 }
 
-.calendar-grid {
 
+.calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
 }
 
-
 /* Mobile (Grid) */
 @media (max-width: 1024px) {
-    .calendar-grid{
+    .calendar-grid {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -104,7 +93,7 @@ header {
         gap: 10px;
     }
 
-    .day, .day-name{
+    .day, .day-name {
         min-width: 140px;
         flex-shrink: 0;
         scroll-snap-align: start;
@@ -112,12 +101,13 @@ header {
 }
 
 
-.day, .day-name{
+.day, .day-name {
     text-align: center;
 }
 
-.day{
-    background: #fff;
+
+.day {
+    background: #FFF;
     border: 1px solid #e5e7eb;
     border-radius: 6px;
     min-height: 100px;
@@ -134,9 +124,9 @@ header {
     background: #f3f4f6;
 }
 
-.day.today{
+.day.today {
     background: var(--primary-light);
-    border-color: var(--primary-dark);
+    border-color: var(--primary-dark)
 }
 
 .date-number {
@@ -147,16 +137,43 @@ header {
 .event {
     background-color: var(--primary);
     color: white;
-    padding: 3px 6px;
-    border-radius: 4px;
-    margin-top: 4px;
-    font-size: 14px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 13px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s ease;
 }
 
 .event:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
+}
+
+.event .course {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.event .instructor {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.event .time {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #f3f3f3;
+}
+
+.event-meta {
+    font-size: 12px;
+    color: #EEF;
+    line-height: 1.2;
 }
 
 /* Alert Boxes */
@@ -226,7 +243,6 @@ header {
     cursor: pointer;
 }
 
-
 .modal-content button[type="submit"] {
     background-color: var(--primary);
     color: white;
@@ -234,13 +250,14 @@ header {
 
 .submit-btn {
     background-color: crimson;
-    color: #fff;
+    color: #FFF;
 }
 
 .modal-content button:last-child {
     background-color: #e5e7eb;
     color: #333;
 }
+
 
 /* DropDown for multiple events */
 
@@ -251,10 +268,13 @@ header {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #CCC;
 }
 
-/* ✅ Overlay Button CSS Logic */
+/* 
+✅ Overlay Button CSS Logic
+
+*/
 
 .day-overlay {
     position: absolute;
@@ -284,3 +304,4 @@ header {
 .overlay-btn:hover {
     background: var(--primary);
 }
+
